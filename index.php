@@ -14,12 +14,6 @@ use utils\DBConnect;
 $db = new DBConnect();
 $conn = $db->connect();
 
-if (is_string($conn)) {
-    $response = ['status' => 300, 'message' => $conn];
-    echo json_encode($response);
-    return;
-}
-
 $service = new ProductService($conn);
 
 switch ($_SERVER['REQUEST_METHOD']) {
