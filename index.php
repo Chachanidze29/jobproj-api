@@ -35,5 +35,3 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $service->deleteProducts($skus);
         break;
 }
-
-
