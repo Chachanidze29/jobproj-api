@@ -178,7 +178,7 @@ class ProductService {
             'SELECT P.sku,P.name,P.price,D.size,PT.type_name from products P
             INNER JOIN dvd D ON P.sku=D.sku
             LEFT JOIN product_types PT ON P.type_id=PT.type_id'
-        );
+                                        );
         $stmt->execute();
         $dvds = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
@@ -197,14 +197,12 @@ class ProductService {
         $stmt->execute();
         $books = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
-        $res = json_encode(array_merge($dvds,$furnitures,$books));
-
-        return $res;
+        return json_encode(array_merge($dvds,$furnitures,$books));
     }
 
     public function deleteProducts($skus) {
-        $ids = implode("','", $skus);
-        $stmt = $this->conn->prepare("DELETE FROM products WHERE sku IN ('".$ids."')");
+        $skus = implode("','", $skus);
+        $stmt = $this->conn->prepare("DELETE FROM products WHERE sku IN ('".$skus."')");
         $stmt->execute();
     }
 
