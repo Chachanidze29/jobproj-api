@@ -8,8 +8,8 @@ header('Content-type: application/json');
 include ('./utils/DBConnect.php');
 include ('./services/ProductService.php');
 
-use services\ProductService;
 use utils\DBConnect;
+use services\ProductService;
 
 $db = new DBConnect();
 $conn = $db->connect();
