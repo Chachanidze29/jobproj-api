@@ -5,10 +5,18 @@ namespace utils;
 use PDO;
 
 class DBConnect {
-    private $server = 'eu-cdbr-west-02.cleardb.net';
-    private $dbName = 'heroku_38e7e52b0cddcf3';
-    private $user = 'b82a7c14965f0f';
-    private $password = 'f0444414';
+    private $server;
+    private $dbName;
+    private $user;
+    private $password;
+
+    public function __construct()
+    {
+        $this->server = $_ENV['SERVER'];
+        $this->dbName = $_ENV['DB_NAME'];
+        $this->user = $_ENV['USERNAME'];
+        $this->password = $_ENV['PASSWORD'];
+    }
 
     public function connect() {
         try {

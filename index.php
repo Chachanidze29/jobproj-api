@@ -11,7 +11,7 @@ include ('./services/ProductService.php');
 use utils\DBConnect;
 use services\ProductService;
 
-$db = new DBConnect();
+$db = new DBConnect;
 $conn = $db->connect();
 
 $service = new ProductService($conn);

@@ -2,6 +2,7 @@
   "require": {
     "ext-json": "*",
     "ext-pdo": "*",
-    "ext-mysqli": "*"
+    "ext-mysqli": "*",
+    "ext-apache": "*"
   }
 }
