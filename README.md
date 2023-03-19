@@ -1,3 +1,3 @@
 # PHP API
 
-simple PHP api
+save, mass delete, edit product
