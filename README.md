@@ -1,1 +1,3 @@
-# scandiweb-api
+# PHP API
+
+simple PHP api
